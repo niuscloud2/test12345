@@ -12,6 +12,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: let it fail
+        id: failed_step
         run: |
           ls
           okokokok
@@ -21,6 +22,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - if: ${{ failure() }}
+      - if: steps.failed_step.outcome != 'success'
         name: processing after failure
         run: echo "already failed. done"
