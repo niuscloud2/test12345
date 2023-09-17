@@ -1,0 +1,5 @@
+jobs:
+  call-workflow-passing-data:
+    uses: test12345/.github/workflows/terraform_plan@main
+    with:
+      directory: .github/labeler.yml
