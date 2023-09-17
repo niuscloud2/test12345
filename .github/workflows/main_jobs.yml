@@ -3,6 +3,6 @@ on: [push, workflow_dispatch]
 
 jobs:
   call-workflow-passing-data:
-    uses: .github/workflows/terraform_plan.yml@main
+    uses: ./.github/workflows/terraform_plan.yml@main
     with:
       directory: .github/labeler.yml
