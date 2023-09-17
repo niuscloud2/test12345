@@ -24,8 +24,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: name: Export credentials and run terraform plan
-      run:
-          command: |
+      run: |
             cd ${{ inputs.directory }}
             echo -e "credentials "app.terraform.io" {\n  token = \"${{ inputs.terraform_token }}\"\n}" >> ~/.terraformrc
             export AWS_ACCESS_KEY_ID=${{ inputs.aws_access_key_id }}
