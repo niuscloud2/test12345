@@ -23,7 +23,7 @@ on:
 jobs:
   runs-on: ubuntu-latest
   steps:
-    - name: name: Export credentials and run terraform plan
+    - name: Export credentials and run terraform plan
       run: |
             cd ${{ inputs.directory }}
             echo -e "credentials "app.terraform.io" {\n  token = \"${{ inputs.terraform_token }}\"\n}" >> ~/.terraformrc
